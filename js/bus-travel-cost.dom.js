@@ -13,7 +13,7 @@ let busFare= calculateFare();
 function calculate(){
 
 let time="";
-let startPlace=place.value;
+let location=place.value;
 
 for(radio of radios){
 
@@ -24,8 +24,10 @@ time=radio.value;
 
 }
 
-pricePerSingle.innerHTML=time;
-singleTrips.innerHTML=startPlace;
+busFare.singleTripPrice(location,time);
+
+pricePerSingle.innerHTML="R" + busFare.getSingleTripPrice();
+singleTrips.innerHTML="10";
 returnTrips.innerHTML="10";
 pricePerReturn.innerHTML="10";
 }
