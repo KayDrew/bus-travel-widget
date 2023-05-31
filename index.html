@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Bus Travel App</title>
+    
+</head>
+
+<body>
+<div class="container">
+    <h1 class="heading">Bus Travel Widget</h1>
+          <label for="points">Points:</label>
+            <input type="text" class="points" id="points" style="margin-bottom: 20px"><br/> 
+     <span> Start Location:</span>  	
+         <select id="place">
+         	<option>select start location</option>
+<option value="Khayelitsha">Khayelitsha</option>
+<option value="Dunoon">Dunoon</option>
+<option value="Mitchels Plain">Mitchels Plain</option>
+</select> 
+<br/>
+<h3>Travel Times</h3>
+
+<div class="split">
+<div id="block">
+         <input type="radio" class="time" id="peak" name="time" value="peak" >
+                <label for="peak"> Peak </label><br/>
+           
+                <input type="radio"  class="class" id="off-peak"  name="time" value="off-peak" >
+                <label for="off-peak">Off-Peak</label>
+        </div>
+        <div>
+<input type="checkbox" id="check"/>
+<label for="check">Return Trip</label>
+<button  type="button" id="calculate" style="margin-top:20px">Calculate</button>
+</div>
+            </div>
+            
+            <h2> Calculations</h2>
+            
+            <p> Number of Single Trips: <span id="text1"><span></p>
+                   <p> Price per trip(single): <span id="text2"><span></p>
+                          <p>Number of Return  Trips:<span id="text3"><span></p>
+                                 <p>Price per Trip(return): <span id="text4"><span></p>
+                   
+    </div>
+    </body>
+    
+    <script src=".js/bus-travel-cost.js"></script>
+    <script src=".js/bus-travel-cost.dom.js"></script>
+</html>

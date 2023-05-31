@@ -1,0 +1,13 @@
+.container{
+
+width:90%;
+margin-top:10%;
+font-weight: bold;
+padding: 20px;
+}
+
+.split{
+display:grid;
+grid-template-columns: 1fr 1fr;
+
+}
