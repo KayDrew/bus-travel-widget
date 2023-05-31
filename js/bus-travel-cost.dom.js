@@ -15,7 +15,7 @@ function calculate(){
 let time="";
 let location=place.value;
 let points=Number(enterPoints.value);
-
+let isChecked=checkbox.checked;
 
 for(radio of radios){
 
@@ -29,13 +29,14 @@ time=radio.value;
 
 busFare.singleTripPrice(location,time);
 busFare.singleTripNumber(points,location,time);
+busFare.returnTripPrice(location,time,isChecked);
 
 var roundedSinglePrice=busFare.getSingleTripPrice().toFixed(2);
 
 pricePerSingle.innerHTML="R" + roundedSinglePrice;
 singleTrips.innerHTML=busFare.getSingleTripNumber();
 returnTrips.innerHTML="10";
-pricePerReturn.innerHTML="10";
+pricePerReturn.innerHTML="R"+ busFare.getReturnTripPrice();
 }
 
 calculateBtn.addEventListener("click",calculate);

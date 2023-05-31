@@ -30,6 +30,7 @@ let pricePerSingleTrip=0;
 let numberOfSingleTrips=0;
 let pricePerReturnTrip=0;
 let numberOfReturnTrips=0;
+let returnTrip=false;
 
 function  singleTripPrice(location,time){
 	
@@ -131,44 +132,52 @@ function getSingleTripNumber(){
 return numberOfSingleTrips;
 }
 
-function returnTripPrice(location,time){
-if(location && time){
+function returnTripPrice(location,time,returnTrip){
+if(location && time && returnTrip){
 	
-	if(location==="Khayelitsha"){
+	if(location==="Khayelitsha" && returnTrip===true){
 	
 	if(time==="peak"){
+		
+pricePerReturnTrip=((40+(40*0.25))*2).toFixed(2);
+}
 
+else if(time==="off-peak"){
+pricePerReturnTrip=40*2;
+}
+
+}
+
+if(location==="Dunoon" && returnTrip===true){
+	
+	if(time==="peak"){
+pricePerReturnTrip=((25+(25*0.25))*2).toFixed(2);
+}
+
+else if(time==="off-peak"){
+pricePerReturnTrip=25*2;
+}
+}
+
+if(location==="Mitchels Plain" && returnTrip==true){
+	
+	if(time==="peak"){
+pricePerReturnTrip=((30+(30*0.25))*2).toFixed(2);
 }
 
 else if(time==="off-peak"){
 
-}
-
-}
-
-if(location==="Dunoon"){
-	
-	if(time==="Peak"){
-
-}
-
-else if(time==="Off-Peak"){
-
-}
-}
-
-if(location==="Mitchels Plain"){
-	
-	if(time==="Peak"){
-
-}
-
-else if(time==="Off-Peak"){
-
+pricePerReturnTrip=30*2;
 }
 
 }
 }
+}
+
+function getReturnTripPrice(){
+
+return pricePerReturnTrip;
+
 }
 
 function returnTripNumber(points,location,time){
@@ -218,7 +227,8 @@ singleTripNumber,
 returnTripPrice,
 returnTripNumber,
 getSingleTripPrice,
-getSingleTripNumber
+getSingleTripNumber,
+getReturnTripPrice
 }
 
 }
