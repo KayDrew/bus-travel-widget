@@ -180,44 +180,50 @@ return pricePerReturnTrip;
 
 }
 
-function returnTripNumber(points,location,time){
+function returnTripNumber(points,location,time,returnTrip){
 if(location && time){
 
-if(location==="Khayelitsha"){
+if(location==="Khayelitsha" && returnTrip===true){
 	
-	if(time==="Peak"){
+	if(time==="peak"){
+numberOfReturnTrips =Math.floor((points/(40+(40*0.25))/2));
+}
+
+else if(time==="off-peak"){
+numberOfReturnTrips=Math.floor((points/40)/2);
+}
 
 }
 
-else if(time==="Off-Peak"){
-
-}
-
-}
-
-if(location==="Dunoon"){
+if(location==="Dunoon" && returnTrip===true){
 	
-	if(time==="Peak"){
-
+	if(time==="peak"){
+numberOfReturnTrips =Math.floor(points/(25+(25*0.25))/2);
 }
 
-else if(time==="Off-Peak"){
-
+else if(time==="off-peak"){
+numberOfReturnTrips=Math.floor((points/25)/2);
 }
 }
 
-if(location==="Mitchels Plain"){
+if(location==="Mitchels Plain"&&returnTrip===true){
 	
-	if(time==="Peak"){
-
+	if(time==="peak"){
+numberOfReturnTrips =Math.floor(points/(30+(30*0.25))/2);
 }
 
-else if(time==="Off-Peak"){
-
+else if(time==="off-peak"){
+numberOfReturnTrips=Math.floor((points/30)/2);
 }
 
 }
 }
+}
+
+
+function getReturnTripNumber(){
+
+return numberOfReturnTrips;
 }
 
 return {
@@ -228,7 +234,10 @@ returnTripPrice,
 returnTripNumber,
 getSingleTripPrice,
 getSingleTripNumber,
-getReturnTripPrice
+getReturnTripPrice,
+getReturnTripNumber
+
+
 }
 
 }

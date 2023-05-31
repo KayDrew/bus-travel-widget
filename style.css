@@ -10,6 +10,7 @@ margin-top:10%;
 font-weight: bold;
 padding: 20px;
 background-color:#98BBF5;
+margin: auto;
 
 }
 
@@ -20,6 +21,12 @@ margin-top:35px;
 @media screen and (min-width:700px){
 #block{
 	margin-right: 40px;
+}
+
+.container{
+
+width:60%;
+
 }
 
 }
