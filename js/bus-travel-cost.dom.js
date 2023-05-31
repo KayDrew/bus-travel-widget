@@ -14,6 +14,8 @@ function calculate(){
 
 let time="";
 let location=place.value;
+let points=Number(enterPoints.value);
+
 
 for(radio of radios){
 
@@ -24,10 +26,14 @@ time=radio.value;
 
 }
 
-busFare.singleTripPrice(location,time);
 
-pricePerSingle.innerHTML="R" + busFare.getSingleTripPrice();
-singleTrips.innerHTML="10";
+busFare.singleTripPrice(location,time);
+busFare.singleTripNumber(points,location,time);
+
+var roundedSinglePrice=busFare.getSingleTripPrice().toFixed(2);
+
+pricePerSingle.innerHTML="R" + roundedSinglePrice;
+singleTrips.innerHTML=busFare.getSingleTripNumber();
 returnTrips.innerHTML="10";
 pricePerReturn.innerHTML="10";
 }

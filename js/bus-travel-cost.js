@@ -87,41 +87,48 @@ function singleTripNumber(points,location,time){
 		
 		if(location==="Khayelitsha"){
 	
-	if(time==="Peak"){
+	if(time==="peak"){
 		
-	numberOfSingleTrips = Math.floor(points/(40+(40*0.25)));
+	numberOfSingleTrips =Math.floor(points/(40+(40*0.25)));
+	
 
 }
 
-else if(time==="Off-Peak"){
-numberOfSingleTrips = Math.floor(points/(40);
+else if(time==="off-peak"){
+numberOfSingleTrips = Math.floor(points/40);
 }
 
 }
 
 if(location==="Dunoon"){
 	
-	if(time==="Peak"){
+	if(time==="peak"){
 numberOfSingleTrips = Math.floor(points/(25+(25*0.25)));
 }
 
-else if(time==="Off-Peak"){
-
+else if(time==="off-peak"){
+numberOfSingleTrips = Math.floor(points/25);
 }
 }
 
 if(location==="Mitchels Plain"){
 	
-	if(time==="Peak"){
+	if(time==="peak"){
 numberOfSingleTrips = Math.floor(points/(30+(30*0.25)));
 }
 
-else if(time==="Off-Peak"){
-
+else if(time==="off-peak"){
+numberOfSingleTrips = Math.floor(points/30);
 }
 }
 
 }
+}
+
+
+function getSingleTripNumber(){
+
+return numberOfSingleTrips;
 }
 
 function returnTripPrice(location,time){
@@ -129,11 +136,11 @@ if(location && time){
 	
 	if(location==="Khayelitsha"){
 	
-	if(time==="Peak"){
+	if(time==="peak"){
 
 }
 
-else if(time==="Off-Peak"){
+else if(time==="off-peak"){
 
 }
 
@@ -210,7 +217,8 @@ singleTripPrice,
 singleTripNumber,
 returnTripPrice,
 returnTripNumber,
-getSingleTripPrice
+getSingleTripPrice,
+getSingleTripNumber
 }
 
 }
