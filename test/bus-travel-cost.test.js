@@ -79,6 +79,22 @@ assert.equal(2,busFare.getReturnTripNumber());
 
 });
 
+it("should not calculate  the total number  of return trips if the return check button is not checked",function(){
+busFare.returnTripNumber(120,"Dunoon","off-peak",false);
+assert.equal(0,busFare.getReturnTripNumber());
+
+busFare.returnTripNumber(190,"Khayelitsha","peak",false);
+assert.equal(0,busFare.getReturnTripNumber());
+});
+
+it("should not calculate  the total cost of return trips if the return check button is not checked",function(){
+busFare.returnTripPrice("Dunoon","off-peak",false);
+assert.equal(0,busFare.getReturnTripNumber());
+
+busFare.returnTripPrice("Khayelitsha","peak",false);
+assert.equal(0,busFare.getReturnTripNumber());
+});
+
 
 
 });
