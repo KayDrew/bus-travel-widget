@@ -84,7 +84,7 @@ return pricePerSingleTrip;
 
 function singleTripNumber(points,location,time){
 	
-	if(points && location && time){
+	if(points && location && time && !isNaN(points)){
 		
 		if(location==="Khayelitsha"){
 	
@@ -133,8 +133,10 @@ return numberOfSingleTrips;
 }
 
 function returnTripPrice(location,time,returnTrip){
-if(location && time && returnTrip){
 	
+	
+if(location && time && returnTrip){
+
 	if(location==="Khayelitsha" && returnTrip===true){
 	
 	if(time==="peak"){
@@ -171,6 +173,11 @@ pricePerReturnTrip=30*2;
 }
 
 }
+
+}
+
+if(returnTrip===false){
+pricePerReturnTrip=0;
 }
 }
 
@@ -181,7 +188,7 @@ return pricePerReturnTrip;
 }
 
 function returnTripNumber(points,location,time,returnTrip){
-if(location && time){
+if(points && location && time && returnTrip && !isNaN(points)){
 
 if(location==="Khayelitsha" && returnTrip===true){
 	
@@ -217,6 +224,13 @@ numberOfReturnTrips=Math.floor((points/30)/2);
 }
 
 }
+
+
+}
+
+if(returnTrip===false){
+numberOfReturnTrips=0;
+
 }
 }
 
