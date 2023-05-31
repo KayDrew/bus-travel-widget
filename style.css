@@ -1,13 +1,29 @@
+body{
+
+background-color:#000;
+}
+
 .container{
 
 width:90%;
 margin-top:10%;
 font-weight: bold;
 padding: 20px;
+background-color:#98BBF5;
+}
+
+h3{
+margin-top:35px;
 }
 
 .split{
 display:grid;
 grid-template-columns: 1fr 1fr;
 
+}
+
+#text1,#text2,#text3,#text4{
+padding-right:80px;
+margin-left: 10px;
+background-color: #7DA4E3;
 }
